@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 
 export const TodoForm = () => {
-	const [item, setItem] = useState('');
-
-	const handleChanges = e => {
-		setItem(e.target.value);
-	};
+	
+	// const handleChanges = e => {
+	// 	setItem(e.target.value);
+	// };
 
 	return (
 		<form>
-			<input
+			{/* <input
 				type='text'
-				value={item}
+				value={state.item}
 				name='item'
 				onChange={handleChanges}
-			/>
+			/> */}
 			<button>Add Item</button>
 		</form>
 	)
