@@ -1,21 +1,33 @@
 import React from 'react';
 
 
-export const TodoForm = () => {
+export const TodoForm = (props) => {
+
+	const addItem = itemName => {
+		const newItem = {
+			item: itemName,
+			completed: false,
+			id: Date.now()
+		}
+	}
+
+	// const toggleItem = id => {
+
+	// }
 	
-	// const handleChanges = e => {
-	// 	setItem(e.target.value);
-	// };
+	const handleChanges = e => {
+		props.setItem(e.target.value);
+	};
 
 	return (
 		<form>
-			{/* <input
+			<input
 				type='text'
-				value={state.item}
+				value={props.item}
 				name='item'
 				onChange={handleChanges}
-			/> */}
-			<button>Add Item</button>
+			/>
+			<button onClick={() => props.dispatch({ type: 'ADD_ITEM', payload: addItem() })}>Add Item</button>
 		</form>
 	)
 }

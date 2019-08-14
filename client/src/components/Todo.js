@@ -4,7 +4,7 @@ export const Todo = (props) => {
 	return (
 		<div
 			className={ `item${ props.completed ? ' complete' : '' }` }
-			onClick={ () => props.toggleItem(props.id) }
+			// onClick={ () => toggleItem(props.id) }
 		>
 			<p>{ props.item.item }</p>
 		</div>

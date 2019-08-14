@@ -29,6 +29,12 @@ export const initialState = {
 
 export const itemReducer = (state, action) => {
 	switch (action.type) {
+		case 'ADD_ITEM':
+			return {
+				...state,
+				item: action.payload
+
+			}
 		case 'TOGG_ITEM':
 			return {
 				...state,
