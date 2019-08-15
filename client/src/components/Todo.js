@@ -1,10 +1,13 @@
 import React from 'react';
 
-export const Todo = (props) => {
+export const Todo = props => {
 	return (
 		<div
-			className={ `item${ props.completed ? ' complete' : '' }` }
-			// onClick={ () => toggleItem(props.id) }
+			className={ `item${ props.item.completed ? ' complete' : '' }` }
+			onClick={e => {
+				e.preventDefault();
+				props.dispatch({ type: 'TOGGLE_TODO', id: props.item.id })
+			}}
 		>
 			<p>{ props.item.item }</p>
 		</div>
